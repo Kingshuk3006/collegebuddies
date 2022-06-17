@@ -1,10 +1,23 @@
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Audiowide: ['Audiowide', 'cursive'],
+        gilroy: ['gilroy', 'Sans-serif'],
+      },
+      colors: {
+        violet: '#9364EE',
+      },
+    },
   },
-  plugins: [],
-}
+  plugins: [
+    function({addVariant}) {
+      addVariant ('child', '& > *');
+      addVariant ('child-hover', '& > *:hover');
+    },
+  ],
+};
