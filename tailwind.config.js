@@ -10,7 +10,7 @@ module.exports = {
         gilroy: ['gilroy', 'Sans-serif'],
       },
       colors: {
-        violet: '#9364EE',
+        violet: '#794AD4',
       },
     },
   },
