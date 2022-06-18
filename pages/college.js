@@ -2,14 +2,17 @@ import Navbar from "../components/Navbar";
 import Button1 from "../components/college page/Button1";
 import Button2 from "../components/college page/Button2";
 import styles from "../styles/Home.module.css";
+import React from 'react';
 
-export default function College() {
+
+export default function College({ title }) {
   return (
+    
     <div className="bg-[#000000] h-full">
       <Navbar />
-      <div className="h-screen space-y-4 my-8">
+      <div className="h-screen space-y-4 my-8">{/*props will be used here*/}
         <h1 className="font-Audiowide text-4xl text-center w-3/4 mx-auto text-white">
-          College Name
+          { title} 
         </h1>
         <div className="flex justify-center space-x-5 py-8">
           <Button1 />
@@ -20,4 +23,16 @@ export default function College() {
       
     </div>
   );
+}
+
+
+export async function getStaticProps() {
+  const collegeinfo= await fetch('https://jsonplaceholder.typicode.com/todos/1').then(response => response.json()) 
+  //just a placeholder api, will be replaced by database querries
+  return {
+    props: {
+      title: collegeinfo.title,
+      id: collegeinfo.id
+    } 
+  }
 }
