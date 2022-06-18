@@ -1,4 +1,6 @@
 import Navbar from "../components/Navbar";
+import Button1 from "../components/college page/Button1";
+import Button2 from "../components/college page/Button2";
 import styles from "../styles/Home.module.css";
 
 export default function College() {
