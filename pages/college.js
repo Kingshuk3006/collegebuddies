@@ -10,15 +10,9 @@ export default function College() {
           College Name
         </h1>
         <div className="flex justify-center space-x-5 py-8">
-        <button className="font-Audiowide text-white bg-violet px-6 py-2 rounded-xl ">
-          Discover
-        </button>
-        <button className="font-Audiowide text-white bg-transparent outline outline-violet px-6 py-2 rounded-xl hover:bg-violet">
-          Discover
-        </button>
-        <button className="font-Audiowide text-white bg-transparent outline outline-violet px-6 py-2 rounded-xl hover:bg-violet">
-          Discover
-        </button>
+          <Button1 />
+          <Button2 />
+          <Button2 />
         </div>
       </div>
       
