@@ -4,17 +4,17 @@ import Link from 'next/link';
 
 const navbarData = [
   {
-    key: Date.now (),
+    key: Date.now(),
     item: 'Home',
     link: '/',
   },
   {
-    key: Date.now (),
+    key: Date.now(),
     item: 'Activities',
     link: '/activities',
   },
   {
-    key: Date.now (),
+    key: Date.now(),
     item: 'Colleges',
     link: '/colleges',
   },
@@ -27,7 +27,7 @@ const Navbar = () => {
         <Image src="/logo.png" layout="fill" objectFit="contain" />
       </div>
       <ul className="flex space-x-12">
-        {navbarData.map (item => {
+        {navbarData.map(item => {
           return (
             <Link href={item.link}>
               <li
