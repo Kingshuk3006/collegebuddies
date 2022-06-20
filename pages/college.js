@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar";
 import Button1 from "../components/college page/Button1";
 import Button2 from "../components/college page/Button2";
+import Ongoing from "../components/Ongoing";
+import EventCard from "../components/EventCard";
 import styles from "../styles/Home.module.css";
 import React from 'react';
 
@@ -8,9 +10,9 @@ import React from 'react';
 export default function College({ title }) {
   return (
     
-    <div className="bg-[#000000] h-full">
+    <div className="bg-[#000000] h-screen">
       <Navbar />
-      <div className="h-screen space-y-4 my-8">{/*props will be used here*/}
+      <div className="space-y-4 my-8">{/*props will be used here*/}
         <h1 className="font-Audiowide text-4xl text-center w-3/4 mx-auto text-white">
           { title} 
         </h1>
@@ -20,6 +22,8 @@ export default function College({ title }) {
           <Button2 />
         </div>
       </div>
+      <Ongoing />
+      <EventCard />
       
     </div>
   );
