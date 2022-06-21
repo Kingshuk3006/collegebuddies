@@ -1,6 +1,6 @@
 import React from 'react';
-import {BsLinkedin, BsInstagram} from 'react-icons/bs';
-import {FaDiscord} from 'react-icons/fa';
+import { BsLinkedin, BsInstagram } from 'react-icons/bs';
+import { FaDiscord } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -24,9 +24,9 @@ const Footer = () => {
           </li>
         </ul>
         <div className='child:text-2xl child:cursor-pointer '>
-          <BsLinkedin className='hover:text-violet'/>
-          <BsInstagram className='hover:text-violet'/>
-          <FaDiscord className='hover:text-violet'/>
+          <BsLinkedin className='hover:text-violet' />
+          <BsInstagram className='hover:text-violet' />
+          <FaDiscord className='hover:text-violet' />
         </div>
       </div>
     </div>
