@@ -14,7 +14,7 @@ const Joinus = () => {
         </div>
 
         <div>
-          <button className="bg-violet px-16 rounded-xl py-2 text-lg">
+          <button className="bg-violet px-16 rounded-xl py-2 text-lg ">
             Apply Now &gt;
           </button>
         </div>

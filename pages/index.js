@@ -4,6 +4,7 @@ import Featured from '../components/Featured/Featured'
 import FeaturedCard from '../components/Featured/FeaturedCard'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
+import Joineecard from '../components/Joineecard'
 import Joinus from '../components/Joinus'
 import Navbar from '../components/Navbar'
 import Testimonials from '../components/Testimonials'
@@ -11,12 +12,13 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className="bg-[#000000] h-full">
+    <div className="bg-[#000000] h-full overflow-x-hidden">
        <Navbar/>
        {/* <FeaturedCard/> */}
        <Hero/>
        <Featured/>
        <Joinus/>
+       <Joineecard/>
        <Testimonials/>
        <Footer/>
     </div>
