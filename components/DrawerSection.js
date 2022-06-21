@@ -11,13 +11,13 @@ const DrawerSection = ({path}) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState (false);
   const sideNavItem = [
     {
-      icons: '<TbSchool/>',
+      icons: <TbSchool className='text-white text-5xl'/>,
       text: 'Colleges',
       key: 'Colleges',
       link: '/college',
     },
     {
-      icons: '<MdOutlineEmojiEvents/>',
+      icons: <MdOutlineEmojiEvents className='text-white text-5xl'/>,
       text: 'Activities',
       key: 'Activities',
       link: '/activities',
@@ -38,11 +38,11 @@ const DrawerSection = ({path}) => {
           <div className="bg-[#000000] min-h-screen sm:h-full h-full flex flex-col text-lgit md:px-8 px-4 md:w-fit w-[80vw] space-y-8 py-4">
             <div className="text-white text-3xl flex flex-row items-center justify-between child:cursor-pointer">
               <Link href="/">
-                <img src="/logo.png" className="w-36" />
+                <img src="/logo.png" className="w-16" />
               </Link>
               <HiOutlineX onClick={() => setIsDrawerOpen (false)} />
             </div>
-            <div className="space-y-12">
+            <div className="space-y-16">
               {sideNavItem.map (item => {
                 return (
                   <Link
@@ -50,15 +50,12 @@ const DrawerSection = ({path}) => {
                     href={path === '/' ? `${item.link}` : '/'}
                   >
                     <div
-                      className="flex flex-row items-center space-x-2 md:text-xl text-lg font-sweet_sans_pro cursor-pointer"
+                      className="flex flex-row items-center justify-center space-x-2 md:text-xl text-lg font-sweet_sans_pro cursor-pointer"
                       onClick={() => {
                         setIsDrawerOpen (false);
                       }}
                     >
-                      <img
-                        src={item.icons}
-                        className="text-transparent bg-clip-text bg-gradient-to-r from-[#85D3FF] to-[#E584FC]"
-                      />
+                      {item.icons}
                       <h1 className="text-white">{item.text}</h1>
                     </div>
                   </Link>
@@ -67,8 +64,8 @@ const DrawerSection = ({path}) => {
             </div>
             <div className="text-center">
               <Link href="/connect">
-                <button className="border-2 border-white rounded-full font-gilroy text-white px-4 py-[2px] text-xl">
-                  Connect
+                <button className="border-2 border-violet rounded-full font-gilroy text-white px-4 py-[2px] text-xl">
+                  Add a event
                 </button>
               </Link>
 

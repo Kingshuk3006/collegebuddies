@@ -4,6 +4,7 @@ import Featured from '../components/Featured/Featured'
 import FeaturedCard from '../components/Featured/FeaturedCard'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
+import Joinee from '../components/Joinee'
 import Joineecard from '../components/Joineecard'
 import Joinus from '../components/Joinus'
 import Navbar from '../components/Navbar'
@@ -18,7 +19,7 @@ export default function Home() {
        <Hero/>
        <Featured/>
        <Joinus/>
-       <Joineecard/>
+       <Joinee/>
        <Testimonials/>
        <Footer/>
     </div>
