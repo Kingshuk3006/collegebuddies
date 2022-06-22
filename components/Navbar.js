@@ -35,7 +35,7 @@ const Navbar = () => {
               <Link href={item.link}>
                 <li
                   key={item.key}
-                  className="cursor-pointer hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-400 to-pink-600 duration-300"
+                  className="cursor-pointer hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-400 to-pink-600 duration-900"
                 >
                   {item.item}
                 </li>

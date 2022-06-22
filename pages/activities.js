@@ -4,9 +4,10 @@ import Button2 from "../components/college page/Button2";
 import styles from "../styles/Home.module.css";
 import React from 'react';
 import EventCard from '../components/EventCard'
+import CommunityPersonCard from "../components/CommunityPersonCard";
 
 
-export default function College() {
+export default function activities() {
   return (
     
     <div className="bg-[#000000]">
@@ -21,11 +22,12 @@ export default function College() {
           <Button2 />
         </div>
       </div>
-      <div className="lg:px-36 md:px-24 px-8 space-y-8">
+      <div className="lg:px-36 md:px-24 px-12 space-y-8">
       <EventCard />
       <EventCard />
       <EventCard />
       </div>
+      <CommunityPersonCard/>
       
       
     </div>

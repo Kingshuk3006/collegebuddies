@@ -5,7 +5,7 @@ import {GrSchedule} from 'react-icons/gr';
 
 const EventCard = () => {
   return (
-    <div className="bg-[#242424] md:p-8 p-4 flex flex-col justify-center items-center space-y-8  rounded-2xl border-b-8 border-violet">
+    <div className="bg-[#242424] md:p-8 p-4 flex flex-col justify-center items-center space-y-8 rounded-2xl border-b-8 border-violet max-w-[75rem] mx-auto">
       <h1 className="font-Audiowide md:text-4xl text-2xl text-white">
         NASCENT
       </h1>
@@ -13,7 +13,7 @@ const EventCard = () => {
         <section className="flex flex-col items-center mx-4">
           <img
             src="collegeevnt.jpg"
-            className="md:h-[28rem] h-[25rem] rounded-2xl border-b-4 border-l-4 border-violet pl-4 pb-4"
+            className="md:h-[28rem] h-[20rem] rounded-2xl border-b-4 border-l-4 border-violet pl-4 pb-4"
           />
         </section>
         <section className="mx-4">
