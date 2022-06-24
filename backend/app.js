@@ -20,6 +20,12 @@ app.use('/colleges', collegeRoute);
 const profileRoute = require('./api/profiles');
 app.use('/profiles', profileRoute);
 
+const eventRoute = require('./api/events');
+app.use('/event', eventRoute);
+
+const projectRoute = require('./api/projects');
+app.use('/project', projectRoute);
+
 //  Methods
 app.get('/', (req, res) => {
     res.send('Hello World');

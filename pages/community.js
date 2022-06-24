@@ -17,7 +17,7 @@ const community = () => {
       <div className='flex justify-center my-8 px-12' >
       <label className='relative w-full md:w-fit'>
          <BsSearch className='absolute  text-white text-2xl mx-auto top-2.5 left-3'/>
-         <input type="text" className='bg-[#242424] rounded-md pl-12 pr-4 py-3 xl:w-[35vw] w-full text-white font-gillroy'/>
+         <input type="text" placeholder='Search by name' className='bg-[#242424] rounded-md pl-12 pr-4 py-3 xl:w-[35vw] w-full text-white font-gillroy placeholder:text-zinc-400'/>
       </label>
       </div>
       

@@ -6,7 +6,7 @@ const Joinus = () => {
       <div className="text-white flex flex-col justify-between space-y-8 md:space-y-0">
         <div className='space-y-8'>
           <h1 className="text-white font-Audiowide md:text-5xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#85D3FF] to-[#E584FC]">
-            Join us
+            Join our community
           </h1>
           <h1 className="font-gilroy text-2xl w-3/4 leading-10">
             Join our community and get an opportunity to represent your college !
