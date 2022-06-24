@@ -4,6 +4,7 @@ import Button2 from "../components/college page/Button2";
 import styles from "../styles/Home.module.css";
 import React from 'react';
 import EventCard from '../components/EventCard'
+import ProjectCard from '../components/ProjectCard'
 import CommunityPersonCard from "../components/CommunityPersonCard";
 
 
@@ -21,6 +22,7 @@ export default function activities() {
         <EventCard />
         <EventCard />
         <EventCard />
+        <ProjectCard />
       </div>
 
 
