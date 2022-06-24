@@ -16,21 +16,23 @@ const navbarData = [
   },
   {
     key: Date.now(),
-    item: 'Colleges',
-    link: '/college',
+    item: 'Community',
+    link: '/community',
   },
 ];
 
 const Navbar = () => {
   return (
     <div className="bg-[#0E0E0E] font-Audiowide text-xl text-white flex justify-between md:px-16 px-4 h-28 items-center">
-      <div className="relative w-12 h-12">
-        <Image src="/logo.png" layout="fill" objectFit="contain" />
+      <div className="relative w-12 h-12 cursor-pointer">
+        <Link href='/'>
+          <Image src="/logo.png" layout="fill" objectFit="contain" />
+        </Link>
       </div>
       <div className="hidden md:block">
 
         <ul className="flex space-x-12">
-          {navbarData.map (item => {
+          {navbarData.map(item => {
             return (
               <Link href={item.link}>
                 <li
