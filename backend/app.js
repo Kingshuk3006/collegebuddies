@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const connectDb = require('./db/connectdb');
-const DATABASE_URL = process.env.DATABASE_URL || "mongodb://localhost:27017"
+const DATABASE_URL = process.env.DATABASE_URL || "mongodb+srv://collegebuddies:kingshukheist123@collegebuddies.7efhynb.mongodb.net/test"
 
 //Body Parser
 app.use(bodyParser.urlencoded({
