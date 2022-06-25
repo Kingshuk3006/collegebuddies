@@ -9,7 +9,7 @@ const postEventschema = mongoose.Schema({
     collegeWebsite: { type: String, required: true, },
     eventName: { type: String, required: true, },
     eventLink: { type: String },
-    eventPosterurl: { type: String, }
+    location: {type:String},
 })
 
 // Model

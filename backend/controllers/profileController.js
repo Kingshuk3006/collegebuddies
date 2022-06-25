@@ -1,4 +1,4 @@
-const ProfileModel = require('../models/profileContent');
+const ProfileModel = require('../models/profileModel');
 
 class profileController {
     // Create a new profile
@@ -43,18 +43,43 @@ class profileController {
         }
     }
 
-    // Update profile by Id
-    static profileUpdate = async (req, res) => {
+    // Get profile by college
+    static profilebyCollege = async (req, res) => {
         try {
-            const id = req.params.id;
-            ProfileModel.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
-            res.send({
-                "message": "Profile Updated Successfully"
-            })
+            const userQuery = await req.query;
+            // console.log(userQuery)
+            const filteredStudent = await ProfileModel.filter((info) => {
+                let isValid = true;
+                for (key in userQuery) {
+                    // console.log(key, userQuery[key], info[key]);
+                    isValid = isValid && info[key] === userQuery[key];
+                }
+                return isValid;
+            });
+            // console.log(filteredStudent)
+            res.json({ data: filteredStudent })
         } catch (err) {
-            console.log(err)
+            res.send(err.message)
         }
     }
+
+    // Update profile by Id
+    static updateProfile = async (req, res) => {
+        try {
+            const id = req.params.id
+            const data = req.body
+            const updatedData = await ProfileModel.findByIdAndUpdate(id, data)
+            res.json({
+                message: `Profile with id ${id} is updated`
+            })
+        } catch (err) {
+            console.log(err);
+            res.json({
+                message: "Error"
+            })
+        }
+    }
+
     // Delete profile by Id
     static profileDelete = async (req, res) => {
         const deleteByid = await ProfileModel.findByIdAndDelete(req.params.id);

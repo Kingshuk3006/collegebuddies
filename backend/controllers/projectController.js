@@ -1,4 +1,5 @@
 const ProjectModel = require('../models/projectModel');
+const featureController = require('./featureEventController');
 
 class projectController {
 
@@ -54,6 +55,15 @@ class projectController {
         } catch (err) {
             console.log(err);
         }
+    }
+
+    static updateProject = async (req, res) => {
+        const id = req.params.id
+        const data = req.body
+        const updatedProject = await ProjectModel.findByIdAndUpdate(id, data);
+        res.json({
+            message: `Project with id ${id} updated`
+        })
     }
 
 
