@@ -27,27 +27,44 @@ class eventController {
         }
     }
 
+    // Post event
+    static postEvent = async (req, res) => {
+
+        const newEvent = new EventModel({
+            name: req.body.name,
+            email: req.body.email,
+            collegeName: req.body.collegeName,
+            collegeWebsite: req.body.collegeWebsite,
+            eventName: req.body.eventName,
+            eventLink: req.body.eventLink,
+            location: req.body.location,
+        })
+        try {
+            newEvent.save()
+            res.json(newEvent);
+        } catch (err) {
+            console.log(err);
+            res.json({
+                message: "Error"
+            })
+        }
+    }
+
     // Update Event by Id
     static eventUpdate = async (req, res) => {
-        if (!req.body) {
-            return res.status(400).send({
-                message: "Data to update can not be empty!"
-            });
-        }
-        const id = req.params.id;
-        EventModel.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
-            .then(data => {
-                if (!data) {
-                    res.status(404).send({
-                        message: `Cannot update Event with id=${id}. Maybe Event was not found!`
-                    });
-                } else res.send({ message: "Event was updated successfully." });
+        try {
+            const id = req.params.id
+            const data = req.body
+            const updatedData  = await EventModel.findByIdAndUpdate(id, data);
+            res.json({
+                message:`Event with ID: ${id} has been updated`
             })
-            .catch(err => {
-                res.status(500).send({
-                    message: "Error updating Event with id=" + id
-                });
-            });
+        } catch (err) {
+            console.log(err);
+            res.json({
+                message:"Error"
+            })
+        }
     };
 
     // Delete event by Id
@@ -61,28 +78,3 @@ class eventController {
 
 module.exports = eventController;
 
-// {
-//     const data = new EventModel({
-//         _id: req.params.id,
-//         name: req.body.name,
-//         email: req.body.email,
-//         collegeName: req.body.collegeName,
-//         collegeWebsite: req.body.collegeWebsite,
-//         eventName: req.body.eventName,
-//         eventLink: req.body.eventLink,
-//         eventPosterurl: req.body.eventPosterurl,
-//     });
-//     EventModel.updateOne({ _id: req.params.id }, data).then(
-//         () => {
-//             res.status(201).json({
-//                 message: 'Thing updated successfully!'
-//             });
-//         }
-//     ).catch(
-//         (error) => {
-//             res.status(400).json({
-//                 error: error
-//             });
-//         }
-//     );
-// };

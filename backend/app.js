@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({
 // Databse Connection
 connectDb(DATABASE_URL);
 
+app.use(express.json())
 // Routes
 const collegeRoute = require('./api/colleges');
 app.use('/colleges', collegeRoute);
@@ -26,6 +27,10 @@ app.use('/event', eventRoute);
 const projectRoute = require('./api/projects');
 app.use('/project', projectRoute);
 
+const featuredRoute = require('./api/featuredEvent');
+app.use('/featuredEvent', featuredRoute);
+
+
 //  Methods
 app.get('/', (req, res) => {
     res.send('Hello World');
@@ -35,5 +40,5 @@ app.get('/', (req, res) => {
 // Port Connectio
 const port = 5000;
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`Server running on port http://localhost:${port}`);
 })
