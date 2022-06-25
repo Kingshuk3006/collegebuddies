@@ -40,8 +40,8 @@ class eventController {
             location: req.body.location,
         })
         try {
-            newEvent.save()
-            res.json(newEvent);
+            const data = await newEvent.save()
+            res.json(data);
         } catch (err) {
             console.log(err);
             res.json({
