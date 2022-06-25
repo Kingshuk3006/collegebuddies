@@ -13,6 +13,6 @@ const postEventschema = mongoose.Schema({
 })
 
 // Model
-const postEventModel = mongoose.model("postEvent", postEventschema);
+const postEventModel = mongoose.model("postevents", postEventschema);
 
 module.exports = postEventModel;
