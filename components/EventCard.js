@@ -1,20 +1,16 @@
 import React from 'react';
-import { FaDiscord } from 'react-icons/fa';
-import { HiOutlineLocationMarker } from 'react-icons/hi';
-import { GrSchedule } from 'react-icons/gr';
+import {FaDiscord} from 'react-icons/fa';
+import {HiOutlineLocationMarker} from 'react-icons/hi';
+import {GrSchedule} from 'react-icons/gr';
 
 const EventCard = () => {
   return (
     <div className="bg-[#242424] md:p-8 p-4 flex flex-col justify-center items-center space-y-8 rounded-2xl border-b-8 border-violet max-w-[75rem] mx-auto">
-      <div className='flex justify-between my-3'>
-        <h1 className="font-Audiowide md:text-4xl text-2xl text-white">
-          NASCENT
-        </h1>
-        <section>
-          <img src="calendar.svg" className='w-12' />
-          <p>23/12/2021 - 28/12/2021</p>
-        </section>
-      </div>
+
+      <h1 className="font-Audiowide md:text-4xl text-2xl text-white">
+        NASCENT
+      </h1>
+
       <div className=" grid md:grid-cols-2 child:space-y-4">
         <section className="flex flex-col items-center mx-4">
           <img
@@ -34,10 +30,13 @@ const EventCard = () => {
             </h1>
           </div>
           <div className="child:flex child:space-x-2 child:font-gillroy flex flex-col space-y-8 child:items-center text-white font-semibold">
-
             <section>
-              <img src="mapmarker.svg" className='w-12' />
+              <img src="mapmarker.svg" className="w-12" />
               <p>Heritage Institute of Technology</p>
+            </section>
+            <section>
+              <img src="calendar.svg" className="w-12" />
+              <p>23/12/2021 - 28/12/2021</p>
             </section>
           </div>
         </section>

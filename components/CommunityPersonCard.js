@@ -3,7 +3,7 @@ import {BsLinkedin, BsGithub, BsInstagram} from 'react-icons/bs';
 
 const CommunityPersonCard = () => {
   return (
-    <div className="bg-[#242424] rounded-xl hover:bg-gradient-to-b from-[#7238e6] via-[#2f1e36] to-[#000000] hover:scale-105 duration-900 ease-in-out flex justify-between py-2 px-4 space-x-4">
+    <div className="bg-[#242424] rounded-xl hover:bg-gradient-to-b from-violet via-[#2f1e36] to-[#000000] hover:scale-105 transition-all  ease-in-out flex justify-between py-2 px-4 space-x-4">
       
         <img src="/Avatar.svg" className='w-24'/>
     

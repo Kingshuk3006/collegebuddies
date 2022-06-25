@@ -10,8 +10,11 @@ import Joinus from '../components/Joinus'
 import Navbar from '../components/Navbar'
 import Testimonials from '../components/Testimonials'
 import styles from '../styles/Home.module.css'
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Home() {
+  const { data: session } = useSession()
+  console.log(session);
   return (
     <div className="bg-[#000000] h-full overflow-x-hidden">
        <Navbar/>
