@@ -7,6 +7,7 @@ class featureController {
             const data = await FeatureEventModel.find();
             res.send(data)
         } catch (err) {
+            console.log(err)
             res.json({
                 message: "Error"
             })
@@ -15,10 +16,13 @@ class featureController {
 
     static postEvent = async (req, res) => {
         const newFeaturedModels = new FeatureEventModel({
-            projectName: req.body.projectName,
-            projectAbout: req.body.projectName,
-            githubLink: req.body.projectName,
-            liveLink: req.body.projectName,
+            name: req.body.name,
+            email: req.body.email,
+            collegeName: req.body.collegeName,
+            collegeWebsite: req.body.collegeWebsite,
+            eventName: req.body.eventName,
+            eventLink: req.body.eventLink,
+            location: req.body.location,
         })
         try {
             const newData = await newFeaturedModels.save()
@@ -50,8 +54,9 @@ class featureController {
             const id = req.params.id
             const update = req.body
             const result = await FeatureEventModel.findByIdAndUpdate(id, update)
+            console.log(result);
             res.json({
-                message:`Updated Successfully`
+                message: `Updated Successfully`
             });
         } catch (err) {
             console.log(err)
