@@ -8,7 +8,7 @@ import ProjectCard from '../components/ProjectCard'
 import CommunityPersonCard from "../components/CommunityPersonCard";
 
 
-export default function activities() {
+export default function activities({data}) {
   return (
 
     <div className="bg-[#000000]">
@@ -22,7 +22,6 @@ export default function activities() {
         <EventCard />
         <EventCard />
         <EventCard />
-        <ProjectCard />
       </div>
 
 
@@ -30,3 +29,11 @@ export default function activities() {
   );
 }
 
+export async function getServerSideProps() {
+  const res = await fetch("http://localhost:5000/event");
+  const data = await res.json();
+
+  return {
+    props: { data },
+  };
+}
