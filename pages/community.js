@@ -3,8 +3,8 @@ import Navbar from "../components/Navbar";
 import CommunityPersonCard from "../components/CommunityPersonCard";
 import { BsSearch } from "react-icons/bs";
 
-const dummyDataAll = [...Array(20)].map((_) => {
-  return <CommunityPersonCard />;
+const dummyDataAll = [...Array(20)].map((_, i) => {
+  return <CommunityPersonCard key={i}/>;
 });
 
 const community = ({ data }) => {
@@ -27,8 +27,10 @@ const community = ({ data }) => {
       </div>
 
       <div className="xl:px-16 md:px-12 px-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 py-12">
-        {dummyDataAll.map((cardItem) => {
-          return cardItem;
+        {dummyDataAll.map((cardItem, i) => {
+          return <div key={i}>
+          cardItem
+          </div>;
         })}
       </div>
     </div>

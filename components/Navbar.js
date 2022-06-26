@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import DrawerSection from './DrawerSection';
 import {useSession, signIn, signOut} from 'next-auth/react';
+import {useEffect} from 'react';
+import { useState } from 'react';
 
 const navbarData = [
   {
@@ -29,20 +31,30 @@ const navbarData = [
 
 const Navbar = () => {
   const {data: session} = useSession ();
-  if (session) {
-    console.log (session.user.name);
-    let user = {
-      'name': `${session.user.name}`,
-      'image': `${session.user.image}`,
-      'email': `${session.user.email}`,
-    };
-    fetch ('https://collegebuddies-backend.vercel.app/profiles', {
-      method: 'POST',
-      mode: 'cors',
-      cache: 'no-cache',
-      body: JSON.stringify (user),
-    }).catch(()=> console.log("Data added")).then((e)=>console.log(e))
-  }
+
+  // async function handleLogin () {
+  //   const response = await fetch (
+  //     'https://collegebuddies-backend.vercel.app/profiles',
+  //     {
+  //       method: 'POST',
+  //       header: {
+  //         'Accept': 'application/json',
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify ({
+  //         name: 'KINGSHUK',
+  //         email: 'KINGSHUK',
+  //         imageUrl: 'KINGSHUK',
+  //       }),
+  //     }
+  //   );
+  //   const data = await response.json ();
+  //   console.log (data);
+  // }
+  // useEffect (() => {
+  //   // console.log (session.user.name);
+  //   handleLogin ();
+  // }, []);
 
   // if (session) {
   //   response ();
@@ -61,9 +73,9 @@ const Navbar = () => {
           : <h1 className="text-white">BOOM YOU ARE not IN</h1>} */}
 
         <ul className="flex space-x-12">
-          {navbarData.map (item => {
+          {navbarData.map ((item, i) => {
             return (
-              <Link href={item.link}>
+              <Link href={item.link} key={i}>
                 <li
                   key={item.key}
                   className="cursor-pointer hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-400 to-pink-600 duration-900"
