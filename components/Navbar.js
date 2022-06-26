@@ -22,8 +22,8 @@ const navbarData = [
   },
   {
     key: Date.now (),
-    item: 'Community',
-    link: '/community',
+    item: 'Projects',
+    link: '/projectsall',
   },
 ];
 
