@@ -2,16 +2,18 @@ import React from 'react';
 import {FcAbout} from 'react-icons/fc';
 import {BsCodeSlash, BsGithub} from 'react-icons/bs';
 import {IoEarth} from 'react-icons/io';
+import Link from 'next/link';
 
-const ProjectCard = () => {
+const ProjectCard = ({project}) => {
+  console.log (project);
   return (
-    <div className="flex flex-col max-w-[25rem] mx-auto">
+    <div className="flex flex-col max-w-[25rem] mx-auto w-full">
 
       <div className="bg-[#242424] p-4 flex flex-col items-center space-y-4 rounded-2xl border-b-8 border-violet mx-auto">
 
         <div className="flex justify-between">
           <h1 className="font-Audiowide text-2xl text-white">
-            App Development
+            {project.projectName}
           </h1>
         </div>
         <div className=" grid md:grid-cols-1">
@@ -23,36 +25,29 @@ const ProjectCard = () => {
               <section>
                 <FcAbout className="text-5xl text-violet" />
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has be
+                  {project.projectAbout}
                 </p>
               </section>
               <section>
                 <BsCodeSlash className="text-2xl text-[#9082EC]" />
                 <section className="grid grid-cols-3 gap-4">
-                  <span>Next JS</span>
-                  <span>Next JS</span>
-                  <span>Next JS</span>
+                  {project.techStacks.map ((stack, i) => {
+                    return <span key={i}>{stack}</span>;
+                  })}
                 </section>
               </section>
             </div>
 
           </section>
-          {/* <div className=" grid md:grid-cols-2 child:space-y-4 space-x-7 mt-5 mx-4">
 
-            <section className="text-white">
-              <p className="color-white">Team Members</p>
-              <img src="joinee.png" className="w-12" />
-            </section>
-            <section className="text-white">
-              <p className="color-white">Progress</p>
-              <p>90%</p>
-            </section>
-
-          </div> */}
           <hr className="border-violet text-[1px] my-2" />
           <div className="flex justify-center items-center space-x-16">
-            <BsGithub className="text-4xl text-[#9082EC]" />
-            <img src="Dribbble.svg" className="" />
+            <Link href={project.githubLink}>
+              <BsGithub className="text-4xl text-[#9082EC]" />
+            </Link>
+            <Link href={project.liveLink}>
+              <img src="Dribbble.svg" className="" />
+            </Link>
 
           </div>
 

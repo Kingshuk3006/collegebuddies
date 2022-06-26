@@ -7,15 +7,17 @@ import Modal from '@mui/material/Modal';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import Link from 'next/link';
 
-const EventCard = () => {
+const EventCard = ({event}) => {
+  console.log (event);
   const [open, setOpen] = React.useState (false);
   const handleOpen = () => setOpen (true);
   const handleClose = () => setOpen (false);
   return (
     <div className="bg-[#242424] md:p-8 p-4 flex flex-col justify-center items-center space-y-8 rounded-2xl border-b-8 border-violet max-w-[75rem] mx-auto relative">
       <h1 className="font-Audiowide md:text-4xl text-2xl text-white">
-        NASCENT
+        {event.eventName}
       </h1>
       <MdReport
         className="text-red-500 text-2xl absolute md:top-0 -top-3 right-7 "
@@ -31,11 +33,7 @@ const EventCard = () => {
         <section className="mx-4">
           <h1 className="font-Audiowide text-2xl text-violet">About</h1>
           <p className=" text-white text-start md:text-lg text-md">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centur
+            {event.eventAbout}
           </p>
           <div>
             <h1 className="bg-violet text-white font-Audiowide max-w-fit px-4 py-2 rounded-full">
@@ -45,7 +43,7 @@ const EventCard = () => {
           <div className="child:flex child:space-x-2 child:font-gillroy flex flex-col space-y-8 child:items-center text-white font-semibold">
             <section>
               <img src="mapmarker.svg" className="w-12" />
-              <p>Heritage Institute of Technology</p>
+              <p>{event.collegeName}, {event.location}</p>
             </section>
             <section>
               <img src="calendar.svg" className="w-12" />
@@ -55,9 +53,9 @@ const EventCard = () => {
         </section>
       </div>
 
-      <button className="bg-violet text-white px-6 py-2 rounded-md  w-1/2 font-Audiowide hover:bg-gradient-to-r from-violet to-pink-600 duration-300">
-        Know More
-      </button>
+      <Link href={event.eventLink}>
+        <button className="bg-violet text-white px-6 py-2 rounded-md  w-1/2 font-Audiowide hover:bg-gradient-to-r from-violet to-pink-600 duration-300">Know More</button>
+      </Link>
 
       <Modal
         open={open}

@@ -23,13 +23,9 @@ const community = ({ data }) => {
       </div>
 
       <div className="xl:px-16 md:px-12 px-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 py-12">
-        <CommunityPersonCard/>
-        <CommunityPersonCard/>
-        <CommunityPersonCard/>
-        <CommunityPersonCard/>
-        <CommunityPersonCard/>
-        <CommunityPersonCard/>
-        <CommunityPersonCard/>
+        {data.map((data, i)=>{
+          return <CommunityPersonCard data={data} key={i}/>
+        })}
       </div>
     </div>
   );

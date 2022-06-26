@@ -19,9 +19,9 @@ export default function activities({data}) {
         </h1>
       </div>
       <div className="lg:px-36 md:px-24 px-12 space-y-8">
-        <EventCard />
-        <EventCard />
-        <EventCard />
+        {data.map((event, i)=>{
+          return <EventCard key={i} event={event}/>
+        })}
       </div>
 
 
@@ -30,7 +30,7 @@ export default function activities({data}) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:5000/event");
+  const res = await fetch("https://collegebuddies-backend.vercel.app/event");
   const data = await res.json();
 
   return {
