@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const ProfileController = require('../controllers/profileController');
 
+
+
+
 router.post('/', ProfileController.createProfile);
 router.get('/', ProfileController.getProfiles);
 router.get('/', ProfileController.profilebyCollege);

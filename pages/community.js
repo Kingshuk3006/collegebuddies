@@ -38,7 +38,7 @@ const community = ({ data }) => {
 export default community;
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:5000/profiles");
+  const res = await fetch("https://collegebuddies-backend.vercel.app/profiles");
   const data = await res.json();
 
   return {

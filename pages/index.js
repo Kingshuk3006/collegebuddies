@@ -14,10 +14,10 @@ import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Home() {
   const { data: session } = useSession()
-  console.log(session);
+  
   return (
     <div className="bg-[#000000] h-full overflow-x-hidden">
-       <Navbar/>
+       <Navbar />
        {/* <FeaturedCard/> */}
        <Hero/>
        <Featured/>
@@ -25,6 +25,7 @@ export default function Home() {
        <Joinee/>
        <Testimonials/>
        <Footer/>
+       {/* {session ? <h1 className='text-white'>BOOM YOU ARE IN</h1> : <h1 className='text-white'>BOOM YOU ARE not IN</h1>} */}
     </div>
   )
 }
