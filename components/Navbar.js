@@ -12,8 +12,13 @@ const navbarData = [
   },
   {
     key: Date.now (),
-    item: 'Activities',
+    item: 'Events',
     link: '/activities',
+  },
+  {
+    key: Date.now (),
+    item: 'Community',
+    link: '/community',
   },
   {
     key: Date.now (),
@@ -24,26 +29,24 @@ const navbarData = [
 
 const Navbar = () => {
   const {data: session} = useSession ();
-  console.log (session);
-
-  let user = {
-    name: session.user.name,
-    image: session.user.image,
-    email: session.user.email,
-  };
-
-  const response = async () => {
-    await fetch ('https://collegebuddies-backend.vercel.app/profiles', {
+  if (session) {
+    console.log (session.user.name);
+    let user = {
+      'name': `${session.user.name}`,
+      'image': `${session.user.image}`,
+      'email': `${session.user.email}`,
+    };
+    fetch ('https://collegebuddies-backend.vercel.app/profiles', {
       method: 'POST',
       mode: 'cors',
       cache: 'no-cache',
       body: JSON.stringify (user),
-    });
-  };
-
-  if (session) {
-    response ();
+    }).catch(()=> console.log("Data added")).then((e)=>console.log(e))
   }
+
+  // if (session) {
+  //   response ();
+  // }
 
   return (
     <div className="bg-[#0E0E0E] font-Audiowide text-xl text-white flex justify-between md:px-16 px-4 h-28 items-center">
